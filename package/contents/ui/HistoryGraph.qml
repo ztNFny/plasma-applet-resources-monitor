@@ -40,7 +40,7 @@ Item {
             x: 0
             y: parent.height - height
             color: barColor
-            radius: 3
+            radius: 0
         }
     }
     
