@@ -39,9 +39,9 @@ Item {
     
     property int itemMargin: 5
     property double parentWidth: parent === null ? 0 : parent.width
-    property double parentHeight: parent === null ? 0 : parent.height + 70
+    property double parentHeight: parent === null ? 0 : parent.height + 20
     property double itemWidth:  vertical ? ( verticalLayout ? parentWidth : (parentWidth - itemMargin) / 2 ) : ( verticalLayout ? (parentHeight - itemMargin) / 2 : parentHeight )
-    property double itemHeight: itemWidth === 0 ? itemWidth : itemWidth - 70
+    property double itemHeight: itemWidth === 0 ? itemWidth : itemWidth - 20
     property double fontPixelSize: itemHeight * fontScale
     property int graphGranularity: 20
     
