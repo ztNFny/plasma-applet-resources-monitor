@@ -261,6 +261,7 @@ Item {
                 id: averageClockText
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: parent.right
+                verticalAlignment: Text.AlignBottom
                 font.pixelSize: fontPixelSize
                 font.pointSize: -1
                 visible: showClock
@@ -270,6 +271,7 @@ Item {
                 id: averageClockInfoText
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: parent.right
+                verticalAlignment: Text.AlignBottom
                 font.pixelSize: fontPixelSize
                 font.pointSize: -1
                 text: 'Clock'
@@ -358,6 +360,7 @@ Item {
                 id: swapPercentText
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: parent.right
+                verticalAlignment: Text.AlignBottom
                 font.pixelSize: fontPixelSize
                 font.pointSize: -1
             }
@@ -366,6 +369,7 @@ Item {
                 id: swapInfoText
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: parent.right
+                verticalAlignment: Text.AlignBottom
                 color: '#FF0000'
                 font.pixelSize: fontPixelSize
                 font.pointSize: -1
