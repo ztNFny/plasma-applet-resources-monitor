@@ -20,7 +20,7 @@ import QtGraphicalEffects 1.0
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.private.quicklaunch 1.0
+import org.kde.kio 1.0 as Kio
 
 Item {
     id: main
@@ -64,19 +64,10 @@ Item {
         allUsageProportionChanged()
     }
     
-    Logic {
-        id: kRun
-    }
+    Kio.KRun { id: kRun } 
     
-    // We need to get the full path to KSysguard to be able to run it
     PlasmaCore.DataSource {
-        id: apps
-        engine: 'apps'
-        property string ksysguardSource: 'org.kde.ksysguard.desktop'
-        connectedSources: [ ksysguardSource ]
-    }
-
-    PlasmaCore.DataSource {
+    
         id: dataSource
         engine: "systemmonitor"
 
@@ -420,7 +411,7 @@ Item {
         id: mouseArea
         anchors.fill: parent
         onClicked: {
-            kRun.openUrl("file:" + apps.data[apps.ksysguardSource].entryPath)
+            kRun.openService("org.kde.ksysguard")
         }
     }
     
