@@ -20,7 +20,7 @@ import QtGraphicalEffects 1.0
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.kio 1.0 as Kio
+import org.kde.plasma.private.quicklaunch 1.0
 
 Item {
     id: main
@@ -36,7 +36,7 @@ Item {
     property bool enableShadows: plasmoid.configuration.enableShadows
     property double fontScale: (plasmoid.configuration.fontScale / 100)
     property bool showMemoryInPercent: memoryInPercent
-    
+
     property int itemMargin: 5
     property double parentWidth: parent === null ? 0 : parent.width
     property double parentHeight: parent === null ? 0 : parent.height + 20
@@ -64,7 +64,7 @@ Item {
         allUsageProportionChanged()
     }
     
-    Kio.KRun {
+    Logic {
         id: kRun
     }
     
@@ -420,7 +420,7 @@ Item {
         id: mouseArea
         anchors.fill: parent
         onClicked: {
-            kRun.openUrl(apps.data[apps.ksysguardSource].entryPath)
+            kRun.openUrl("file:" + apps.data[apps.ksysguardSource].entryPath)
         }
     }
     
