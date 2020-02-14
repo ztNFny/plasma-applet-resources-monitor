@@ -41,7 +41,7 @@ Item {
     property double parentWidth: parent === null ? 0 : parent.width
     property double parentHeight: parent === null ? 0 : parent.height + 20
     property double itemWidth:  vertical ? ( verticalLayout ? parentWidth : (parentWidth - itemMargin) / 2 ) : ( verticalLayout ? (parentHeight - itemMargin) / 2 : parentHeight )
-    property double itemHeight: itemWidth === 0 ? itemWidth*1.5 : itemWidth*1.5 - 20
+    property double itemHeight: itemWidth === 0 ? itemWidth*1.2 : itemWidth*1.2
     property double fontPixelSize: itemHeight * fontScale
     property int graphGranularity: 20
     
@@ -49,7 +49,7 @@ Item {
     property string textFontFamily: theme.defaultFont.family
     
     property double widgetWidth:  showCpuMonitor && showRamMonitor && !verticalLayout ? itemWidth*2 + itemMargin : itemWidth
-    property double widgetHeight: showCpuMonitor && showRamMonitor &&  verticalLayout ? itemWidth*2 + itemMargin : itemWidth*1.5
+    property double widgetHeight: showCpuMonitor && showRamMonitor &&  verticalLayout ? itemWidth*2 + itemMargin : itemWidth*1.2
     
     Layout.preferredWidth:  widgetWidth
     Layout.maximumWidth: widgetWidth
